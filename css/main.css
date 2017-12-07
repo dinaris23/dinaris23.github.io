@@ -1,0 +1,149 @@
+body {
+  font-family: "Cabin", sans-serif;
+  font-size: 16px;
+  color: #c6ccd2;
+  max-width: 1180px;
+  margin: 0 auto; }
+
+.wrapp {
+  display: flex;
+  justify-content: space-between;
+  margin: 30px 50px 50px 30px; }
+
+.formTop {
+  width: 460px;
+  background-color: #f2f5f8;
+  border-radius: 5px; }
+  .formTop__header {
+    width: 460px;
+    height: 144px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    position: relative; }
+    .formTop__header--up {
+      background-image: url("../img/header-sign-up.png"); }
+    .formTop__header--in {
+      background-image: url("../img/header-sign-in.png"); }
+  .formTop__link {
+    text-decoration: none;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    margin: 0;
+    font-size: 14px;
+    color: #fff; }
+  .formTop__title {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    margin: 0;
+    font-size: 32px;
+    text-transform: uppercase;
+    color: #fff; }
+  .formTop__social {
+    display: flex;
+    justify-content: space-between; }
+
+.registrationForm {
+  margin: 30px; }
+  .registrationForm__input {
+    width: 100%;
+    box-sizing: border-box;
+    border: 2px solid #c6ccd2;
+    border-radius: 5px;
+    font-family: "Cabin", sans-serif;
+    font-size: 16px;
+    color: #383737;
+    outline: none;
+    padding: 16px 0 11px 45px; }
+    .registrationForm__input--mail {
+      background: #fff url("../img/e-mail-icon.png") no-repeat 15px 17px;
+      background-size: 20px 14px;
+      margin-bottom: 25px; }
+      .registrationForm__input--mail:focus {
+        background: #fff url("../img/e-mail-icon-focus.png") no-repeat 13px 15px;
+        background-size: 24px 19px; }
+    .registrationForm__input--password {
+      background: #fff url("../img/lock-Icon.png") no-repeat 20px 15px;
+      background-size: 14px 18px; }
+  .registrationForm__forgotPass {
+    text-align: center;
+    margin: 0;
+    margin: 12px 0 20px 0;
+    font-size: 14px; }
+  .registrationForm__delimiter {
+    font-size: 14px;
+    text-transform: uppercase;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+    margin: 20px 0; }
+    .registrationForm__delimiter::before {
+      border-top: 2px solid #dee2e7;
+      content: "";
+      margin: 0 auto;
+      position: absolute;
+      top: 50%;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      width: 100%;
+      z-index: -1; }
+    .registrationForm__delimiter span {
+      background: #f2f5f8;
+      padding: 0 15px; }
+
+.btn {
+  border-radius: 5px;
+  width: 100%;
+  border: none;
+  padding: 15px 0;
+  font-family: "Cabin", sans-serif;
+  font-size: 18px;
+  color: #fff;
+  cursor: pointer; }
+  .btn--social {
+    width: 47.5%; }
+  .btn--blue {
+    background-color: #65abd0; }
+    .btn--blue:hover {
+      background-color: #3162a2; }
+  .btn--darkBlue {
+    background-color: #3162a2; }
+    .btn--darkBlue:hover {
+      background-color: #65abd0; }
+  .btn--green {
+    background-color: #24aa98; }
+    .btn--green:hover {
+      background-color: #30d7c1; }
+
+.checkbox {
+  font-size: 14px; }
+  .checkbox__input {
+    display: none; }
+    .checkbox__input:checked + .checkbox__custom::before {
+      content: "";
+      display: block;
+      position: absolute;
+      top: 7px;
+      left: 2px;
+      width: 2px;
+      height: 2px;
+      box-shadow: 2px 0 0 white, 4px 0 0 white, 4px -2px 0 white, 4px -4px 0 white, 4px -6px 0 white, 4px -8px 0 white;
+      -webkit-transform: rotate(45deg);
+      transform: rotate(45deg); }
+  .checkbox__custom {
+    position: relative;
+    width: 16px;
+    height: 16px;
+    border: none;
+    border-radius: 5px;
+    background-color: #24aa98;
+    display: inline-block;
+    vertical-align: middle;
+    margin: 12px 0 20px 0; }
+  .checkbox__label {
+    display: inline-block;
+    vertical-align: middle;
+    margin: 12px 0 20px 0; }
