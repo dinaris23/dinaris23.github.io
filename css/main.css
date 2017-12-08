@@ -10,10 +10,22 @@ body {
   justify-content: space-between;
   margin: 30px 50px 50px 30px; }
 
+::-webkit-input-placeholder {
+  color: #c6ccd2; }
+
+:-moz-placeholder {
+  color: #c6ccd2; }
+
+::-moz-placeholder {
+  color: #c6ccd2; }
+
+:-ms-input-placeholder {
+  color: #c6ccd2; }
+
 .formTop {
   width: 460px;
-  background-color: #f2f5f8;
-  border-radius: 5px; }
+  border-radius: 5px;
+  background-color: #f2f5f8; }
   .formTop__header {
     width: 460px;
     height: 144px;
@@ -60,7 +72,7 @@ body {
     .registrationForm__input--mail {
       background: #fff url("../img/e-mail-icon.png") no-repeat 15px 17px;
       background-size: 20px 14px;
-      margin-bottom: 25px; }
+      margin-bottom: 22px; }
       .registrationForm__input--mail:focus {
         background: #fff url("../img/e-mail-icon-focus.png") no-repeat 13px 15px;
         background-size: 24px 19px; }
@@ -117,6 +129,21 @@ body {
     background-color: #24aa98; }
     .btn--green:hover {
       background-color: #30d7c1; }
+  .btn--red {
+    background-color: #db7560; }
+    .btn--red:hover {
+      background-color: #d9c26c; }
+  .btn--facebook, .btn--twitter {
+    font-size: 14px;
+    padding: 0;
+    padding-top: 12px;
+    padding-bottom: 13px; }
+  .btn--facebook {
+    padding-left: 19px;
+    background: #65abd0 url("../img/Facebook_icon.png") 20px 13px no-repeat; }
+  .btn--twitter {
+    padding-left: 20px;
+    background: #3162a2 url("../img/Twitter_icon.png") 21px 15px no-repeat; }
 
 .checkbox {
   font-size: 14px; }
@@ -147,3 +174,32 @@ body {
     display: inline-block;
     vertical-align: middle;
     margin: 12px 0 20px 0; }
+
+.formSmall {
+  border-radius: 5px;
+  background-color: #f2f5f8;
+  width: 300px; }
+  .formSmall__header {
+    overflow: hidden;
+    margin-top: 18px; }
+  .formSmall__title {
+    float: left;
+    margin: 0;
+    line-height: 1;
+    text-transform: uppercase;
+    color: #393635;
+    font-size: 16px;
+    margin-left: 20px; }
+  .formSmall__link {
+    float: right;
+    text-decoration: none;
+    color: #65abd0;
+    font-size: 14px;
+    margin-right: 16px; }
+  .formSmall--subscribing {
+    margin: 0;
+    margin-top: 20px; }
+
+.formsHolder {
+  display: flex;
+  flex-direction: column; }
