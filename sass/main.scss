@@ -1,0 +1,261 @@
+//variables
+$text-color: #c6ccd2;
+$bg-color: #f2f5f8;
+$color-green: #24aa98;
+$color-lightGreen: #30d7c1;
+$color-blue: #65abd0;
+$color-darkBlue: #3162a2;
+$color-orange: #d9c26c;
+$color-red: #db7560;
+$color-black: #393635;
+$border-radius: 5px;
+$font: 'Cabin', sans-serif;
+$font-size: 16px;
+
+//mixins
+@mixin forms {
+    border-radius: $border-radius;
+    background-color: $bg-color;
+}
+@mixin placeholder {
+    ::-webkit-input-placeholder {@content};
+    :-moz-placeholder           {@content};
+    ::-moz-placeholder          {@content};
+    :-ms-input-placeholder      {@content}; 
+  }
+
+
+body {
+    font-family: $font;
+	font-size: $font-size;
+	color: $text-color;
+	max-width: 1180px;
+	margin: 0 auto;
+}
+.wrapp {
+	display: flex;
+	justify-content: space-between;
+    margin: 30px 50px 50px 30px;
+
+}
+@include placeholder {
+    color: $text-color;
+}
+.formTop {
+    width: 460px;
+    @include forms;
+        &__header {
+            width: 460px;
+            height: 144px;
+            background-size: contain;
+            background-repeat: no-repeat;
+            position: relative;
+                &--up {
+                    background-image: url('../img/header-sign-up.png');
+                }
+                &--in {
+                    background-image: url('../img/header-sign-in.png');
+                }
+            }
+        &__link {
+            text-decoration: none;
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            margin: 0;
+            font-size: 14px;
+            color: #fff;
+        }
+        &__title {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            margin: 0;
+            font-size: 32px;
+            text-transform: uppercase;
+            color: #fff;
+        }
+        &__social {
+            display: flex;
+            justify-content: space-between;
+        }
+}
+.registrationForm {
+    margin: 30px;
+        &__input {
+            width: 100%;
+            box-sizing: border-box;
+            border: 2px solid $text-color;
+            border-radius: $border-radius;
+            font-family: $font; 
+            font-size: $font-size;
+            color: #383737;
+            outline: none;
+            padding: 16px 0 11px 45px;
+                &--mail {
+                    background: #fff url('../img/e-mail-icon.png') no-repeat 15px 17px;
+                    background-size: 20px 14px;
+                    margin-bottom: 22px;
+                        &:focus {
+                            background: #fff url('../img/e-mail-icon-focus.png') no-repeat 13px 15px;
+                            background-size: 24px 19px;
+                        }
+                    }
+                &--password {
+                    background: #fff url('../img/lock-Icon.png') no-repeat 20px 15px;
+                    background-size: 14px 18px;
+                }
+            }    
+        &__forgotPass {
+            text-align: center;
+            margin: 0;
+            margin: 12px 0 20px 0;
+            font-size: 14px;
+        }   
+        &__delimiter {
+            font-size: 14px;
+            text-transform: uppercase;
+            text-align: center;
+            position: relative;
+            z-index: 1;
+            margin: 20px 0;
+                &::before {
+                    border-top: 2px solid #dee2e7;
+                    content: "";
+                    margin: 0 auto;
+                    position: absolute;
+                    top: 50%;
+                    left: 0;
+                    right: 0;
+                    bottom: 0;
+                    width: 100%;
+                    z-index: -1;
+                }
+                span {
+                    background: $bg-color;
+                    padding: 0 15px;
+            }
+        }
+    }
+.btn {
+    border-radius: $border-radius;
+	width: 100%;
+	border: none;
+	padding: 15px 0;
+	font-family: $font;
+	font-size: 18px;
+	color: #fff;
+    cursor: pointer;
+        &--social {
+            width: 47.5%;
+        }
+        &--blue {
+            background-color: $color-blue;
+                &:hover {
+                    background-color: $color-darkBlue;
+                }
+            }
+        &--darkBlue {
+            background-color: $color-darkBlue;
+                &:hover {
+                    background-color: $color-blue;
+                }
+            } 
+        &--green {
+            background-color: $color-green;
+                &:hover {
+                    background-color: $color-lightGreen;
+                }
+            }  
+        &--red {
+            background-color: $color-red;
+                &:hover {
+                    background-color: $color-orange;
+                }
+        }     
+        &--facebook,&--twitter {
+            font-size: 14px;
+            padding: 0;
+            padding-top: 12px;
+            padding-bottom: 13px;
+        } 
+        &--facebook {
+            padding-left: 19px;
+            background: $color-blue url('../img/Facebook_icon.png') 20px 13px no-repeat;
+        }
+        &--twitter {
+            padding-left: 20px;
+            background: $color-darkBlue url('../img/Twitter_icon.png') 21px 15px no-repeat;
+        }
+
+}    
+.checkbox {
+    font-size: 14px;
+        &__input {
+            display: none;
+            &:checked + .checkbox__custom::before{
+                content: "";             
+                display: block;          
+                position: absolute;      
+                top: 7px;
+                left: 2px;
+                width: 2px;
+                height: 2px;
+                box-shadow: 2px 0 0 white, 4px 0 0 white, 4px -2px 0 white, 4px -4px 0 white, 4px -6px 0 white, 4px -8px 0 white;
+                -webkit-transform: rotate(45deg);
+                transform: rotate(45deg);
+
+            }
+        }
+        &__custom {
+            position: relative;      
+            width: 16px;             
+            height: 16px;            
+            border: none;
+            border-radius: 5px;
+            background-color: $color-green;
+            display: inline-block;
+            vertical-align: middle;
+            margin: 12px 0 20px 0;
+        }
+        &__label {
+            display: inline-block;
+            vertical-align: middle;
+            margin: 12px 0 20px 0;
+        }
+}
+.formSmall {
+    @include forms;
+    width: 300px;
+        &__header {
+            overflow: hidden;
+            margin-top: 18px;
+        }
+        &__title {
+            float: left;
+            margin: 0;
+            line-height: 1;
+            text-transform: uppercase;
+            color: $color-black;
+            font-size: $font-size;
+            margin-left: 20px;
+
+        }
+        &__link {
+            float: right;
+            text-decoration: none;
+            color: $color-blue;
+            font-size: 14px;
+            margin-right: 16px;
+        }
+        &--subscribing {
+            margin: 0;
+            margin-top: 20px;
+        }
+    
+}
+.formsHolder {
+    display: flex;
+    flex-direction: column;
+}
