@@ -5,10 +5,14 @@ body {
   max-width: 1180px;
   margin: 0 auto; }
 
+.container {
+  width: 940px;
+  margin: 0 auto; }
+
 .wrapp {
   display: flex;
   justify-content: space-between;
-  margin: 30px 50px 50px 30px; }
+  margin-top: 50px; }
 
 ::-webkit-input-placeholder {
   color: #c6ccd2; }
@@ -79,6 +83,20 @@ body {
     .registrationForm__input--password {
       background: #fff url("../img/lock-Icon.png") no-repeat 20px 15px;
       background-size: 14px 18px; }
+    .registrationForm__input--subscribe {
+      width: 200px;
+      box-sizing: border-box;
+      border: 2px solid #c6ccd2;
+      border-radius: 5px;
+      font-family: "Cabin", sans-serif;
+      font-size: 16px;
+      color: #383737;
+      outline: none;
+      padding: 15px 0 11px 45px;
+      margin-right: 8px;
+      margin-bottom: 0px; }
+  .registrationForm__subscribe {
+    margin: 25px 20px 20px 20px; }
   .registrationForm__forgotPass {
     text-align: center;
     margin: 0;
@@ -108,7 +126,6 @@ body {
 
 .btn {
   border-radius: 5px;
-  width: 100%;
   border: none;
   padding: 15px 0;
   font-family: "Cabin", sans-serif;
@@ -125,6 +142,11 @@ body {
     background-color: #3162a2; }
     .btn--darkBlue:hover {
       background-color: #65abd0; }
+  .btn--send {
+    width: 140px;
+    float: right;
+    margin-top: 25px;
+    margin-bottom: 30px; }
   .btn--green {
     background-color: #24aa98; }
     .btn--green:hover {
@@ -133,6 +155,13 @@ body {
     background-color: #db7560; }
     .btn--red:hover {
       background-color: #d9c26c; }
+  .btn--orange {
+    background-color: #d9c26c; }
+    .btn--orange:hover {
+      background-color: #db7560; }
+  .btn--subscribe {
+    width: 48px;
+    height: 48px; }
   .btn--facebook, .btn--twitter {
     font-size: 14px;
     padding: 0;
@@ -144,6 +173,16 @@ body {
   .btn--twitter {
     padding-left: 20px;
     background: #3162a2 url("../img/Twitter_icon.png") 21px 15px no-repeat; }
+  .btn--big {
+    width: 100%; }
+  .btn--payment {
+    padding: 18px;
+    float: right;
+    margin-bottom: 30px; }
+    .btn--payment--bottom {
+      margin-bottom: 0;
+      margin-bottom: 30px;
+      margin-right: 35px; }
 
 .checkbox {
   font-size: 14px; }
@@ -170,10 +209,21 @@ body {
     display: inline-block;
     vertical-align: middle;
     margin: 12px 0 20px 0; }
+    .checkbox__custom--contact {
+      margin: 0;
+      margin-top: 25px; }
+    .checkbox__custom--payment {
+      margin: 0; }
   .checkbox__label {
     display: inline-block;
     vertical-align: middle;
     margin: 12px 0 20px 0; }
+    .checkbox__label--contact {
+      margin: 0;
+      margin-top: 25px; }
+    .checkbox__label--payment {
+      margin: 0;
+      color: #393635; }
 
 .formSmall {
   border-radius: 5px;
@@ -190,16 +240,187 @@ body {
     color: #393635;
     font-size: 16px;
     margin-left: 20px; }
+    .formSmall__title--left {
+      margin-left: 0; }
   .formSmall__link {
     float: right;
     text-decoration: none;
     color: #65abd0;
     font-size: 14px;
     margin-right: 16px; }
-  .formSmall--subscribing {
+  .formSmall--subscribe {
     margin: 0;
     margin-top: 20px; }
 
 .formsHolder {
   display: flex;
   flex-direction: column; }
+
+.formContact {
+  border-radius: 5px;
+  background-color: #f2f5f8; }
+  .formContact__input {
+    box-sizing: border-box;
+    border: 2px solid #c6ccd2;
+    border-radius: 5px;
+    font-family: "Cabin", sans-serif;
+    font-size: 16px;
+    color: #383737;
+    outline: none;
+    width: 100%;
+    margin-bottom: 25px;
+    padding: 16px; }
+  .formContact__label {
+    display: block;
+    font-size: 14px;
+    margin-bottom: 10px; }
+  .formContact__select {
+    padding: 16px;
+    width: 100%;
+    border: none;
+    box-shadow: none;
+    background-color: transparent;
+    background-image: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none; }
+    .formContact__select:focus {
+      outline: none; }
+  .formContact__wrapp {
+    margin: 30px;
+    width: 560px; }
+  .formContact__textarea {
+    width: 100%;
+    height: 140px;
+    overflow: hidden;
+    border-radius: 5px;
+    border: 2px solid #c6ccd2;
+    font-family: "Cabin", sans-serif;
+    font-size: 16px;
+    padding: 15px 25px 15px 15px;
+    box-sizing: border-box; }
+  .formContact__column {
+    overflow: hidden;
+    height: 1%; }
+    .formContact__column--left {
+      float: left;
+      margin-right: 40px;
+      width: 46.4%; }
+    .formContact__column--right {
+      float: right;
+      width: 46.4%; }
+  .formContact--small {
+    margin: 30px 20px 0px 20px; }
+
+.formShipping {
+  border-radius: 5px;
+  background-color: #f2f5f8;
+  width: 100%; }
+  .formShipping:after {
+    content: "";
+    display: table;
+    clear: both; }
+  .formShipping__wrapp {
+    margin: 30px; }
+  .formShipping__form {
+    display: flex;
+    justify-content: space-between; }
+  .formShipping__column {
+    width: 100%;
+    margin-right: 30px; }
+    .formShipping__column:last-child {
+      margin-right: 0; }
+  .formShipping__select {
+    margin-bottom: 25px; }
+    .formShipping__select:focus {
+      outline: none; }
+  .formShipping__link {
+    text-decoration: none;
+    color: #65abd0;
+    font-size: 16px;
+    margin-right: 16px; }
+
+i {
+  font-size: 14px; }
+
+.fa-chevron-left {
+  color: #65abd0; }
+
+.fa-button {
+  padding-left: 10px; }
+
+.select-style {
+  padding: 0;
+  margin: 0;
+  margin-bottom: 25px;
+  border: none;
+  width: 100%;
+  border-radius: 5px;
+  overflow: hidden;
+  background-color: #65abd0;
+  background: #65abd0 url("../img/select_icon.png") no-repeat 90% 50%; }
+  .select-style--orange {
+    background-color: #d9c26c;
+    background: #d9c26c url("../img/select_icon.png") no-repeat 90% 50%; }
+
+.formPayment {
+  padding: 35px 100px 0 30px; }
+  .formPayment__column {
+    width: 50%; }
+    .formPayment__column--left {
+      float: left; }
+    .formPayment__column--right {
+      float: right; }
+  .formPayment__input {
+    box-sizing: border-box;
+    border: 2px solid #c6ccd2;
+    border-radius: 5px;
+    font-family: "Cabin", sans-serif;
+    font-size: 16px;
+    color: #383737;
+    outline: none;
+    width: 100%;
+    padding: 16px;
+    margin-bottom: 25px; }
+    .formPayment__input--number {
+      width: 22%;
+      margin-right: 10px; }
+      .formPayment__input--number:nth-child(5) {
+        margin-right: 0px; }
+  .formPayment__block {
+    margin-top: 30px;
+    margin-right: 60px; }
+  .formPayment-fa {
+    padding-right: 10px; }
+  .formPayment__link {
+    padding-left: 15px; }
+  .formPayment__bottom {
+    clear: both; }
+    .formPayment__bottom:after {
+      content: "";
+      display: table;
+      clear: both; }
+  .formPayment__select {
+    padding: 16px;
+    width: 100%;
+    border: none;
+    box-shadow: none;
+    background-color: transparent;
+    background-image: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none; }
+  .formPayment__select-style {
+    padding: 0;
+    margin: 0;
+    margin-bottom: 25px;
+    border: none;
+    width: 48%;
+    border-radius: 5px;
+    overflow: hidden;
+    background-color: #d9c26c;
+    background: #d9c26c url(../img/select_icon.png) no-repeat 90% 50%; }
+    .formPayment__select-style--right {
+      float: right; }
+    .formPayment__select-style--left {
+      float: left; }

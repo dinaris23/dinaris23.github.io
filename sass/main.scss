@@ -23,7 +23,31 @@ $font-size: 16px;
     ::-moz-placeholder          {@content};
     :-ms-input-placeholder      {@content}; 
   }
-
+@mixin input {
+    box-sizing: border-box;
+    border: 2px solid #c6ccd2;
+    border-radius: 5px;
+    font-family: "Cabin", sans-serif;
+    font-size: 16px;
+    color: #383737;
+    outline: none;
+}  
+@mixin button {
+    border-radius: $border-radius;
+	border: none;
+	padding: 15px 0;
+	font-family: $font;
+	font-size: 18px;
+	color: #fff;
+    cursor: pointer;
+}
+@mixin clearfix {
+    &:after {
+        content: "";
+        display: table;
+        clear: both;
+      }
+}
 
 body {
     font-family: $font;
@@ -32,10 +56,14 @@ body {
 	max-width: 1180px;
 	margin: 0 auto;
 }
+.container {
+    width: 940px;
+    margin: 0 auto;
+}
 .wrapp {
 	display: flex;
 	justify-content: space-between;
-    margin: 30px 50px 50px 30px;
+    margin-top: 50px;
 
 }
 @include placeholder {
@@ -106,7 +134,23 @@ body {
                     background: #fff url('../img/lock-Icon.png') no-repeat 20px 15px;
                     background-size: 14px 18px;
                 }
-            }    
+                &--subscribe {
+                    width: 200px;
+                    box-sizing: border-box;
+                    border: 2px solid $text-color;
+                    border-radius: $border-radius;
+                    font-family: $font; 
+                    font-size: $font-size;
+                    color: #383737;
+                    outline: none;
+                    padding: 15px 0 11px 45px;
+                    margin-right: 8px;
+                    margin-bottom: 0px;
+                }
+            }   
+        &__subscribe {
+            margin: 25px 20px 20px 20px;
+        }     
         &__forgotPass {
             text-align: center;
             margin: 0;
@@ -139,14 +183,7 @@ body {
         }
     }
 .btn {
-    border-radius: $border-radius;
-	width: 100%;
-	border: none;
-	padding: 15px 0;
-	font-family: $font;
-	font-size: 18px;
-	color: #fff;
-    cursor: pointer;
+    @include button;
         &--social {
             width: 47.5%;
         }
@@ -162,6 +199,12 @@ body {
                     background-color: $color-blue;
                 }
             } 
+        &--send {
+            width: 140px;
+            float: right;
+            margin-top: 25px;
+            margin-bottom: 30px;
+        }    
         &--green {
             background-color: $color-green;
                 &:hover {
@@ -174,6 +217,16 @@ body {
                     background-color: $color-orange;
                 }
         }     
+        &--orange {
+            background-color: $color-orange;
+                &:hover {
+                    background-color: $color-red;
+                }
+        }
+        &--subscribe {
+            width: 48px;
+            height: 48px;
+        }
         &--facebook,&--twitter {
             font-size: 14px;
             padding: 0;
@@ -187,6 +240,19 @@ body {
         &--twitter {
             padding-left: 20px;
             background: $color-darkBlue url('../img/Twitter_icon.png') 21px 15px no-repeat;
+        }
+        &--big {
+            width: 100%;
+        }
+        &--payment {
+            padding: 18px;
+            float: right;
+            margin-bottom: 30px;
+                &--bottom {
+                    margin-bottom: 0;
+                    margin-bottom: 30px;
+                    margin-right: 35px;
+                }
         }
 
 }    
@@ -218,11 +284,26 @@ body {
             display: inline-block;
             vertical-align: middle;
             margin: 12px 0 20px 0;
+                &--contact {
+                    margin: 0;
+                    margin-top: 25px;
+                }
+                &--payment {
+                    margin: 0;
+                }
         }
         &__label {
             display: inline-block;
             vertical-align: middle;
             margin: 12px 0 20px 0;
+                &--contact {
+                    margin: 0;
+                    margin-top: 25px;
+                }
+                &--payment {
+                    margin: 0;
+                    color: $color-black;
+                }
         }
 }
 .formSmall {
@@ -240,6 +321,9 @@ body {
             color: $color-black;
             font-size: $font-size;
             margin-left: 20px;
+                &--left {
+                    margin-left: 0;
+                }
 
         }
         &__link {
@@ -249,7 +333,7 @@ body {
             font-size: 14px;
             margin-right: 16px;
         }
-        &--subscribing {
+        &--subscribe {
             margin: 0;
             margin-top: 20px;
         }
@@ -258,4 +342,189 @@ body {
 .formsHolder {
     display: flex;
     flex-direction: column;
+}
+.formContact {
+    @include forms;
+        &__input {
+            @include input;
+            width: 100%;
+            margin-bottom: 25px;
+            padding: 16px;
+        }
+        &__label {
+            display: block;
+            font-size: 14px;
+            margin-bottom: 10px;
+        }
+        &__select  {
+                padding: 16px;
+                width: 100%;
+                border: none;
+                box-shadow: none;
+                background-color: transparent;
+                background-image: none;
+                -webkit-appearance: none;
+                   -moz-appearance: none;
+                        appearance: none;
+                        &:focus { 
+                            outline: none;
+                        }
+            }
+        
+        &__wrapp {
+            margin: 30px;
+            width: 560px;
+        }
+        &__textarea {
+            width: 100%;
+            height: 140px;
+            overflow:hidden;
+            border-radius: $border-radius;
+            border: 2px solid $text-color;
+            font-family: $font;
+            font-size: $font-size; 
+            padding: 15px 25px 15px 15px;
+            box-sizing: border-box;
+
+        }
+        &__column {
+          overflow: hidden;
+          height: 1%;
+
+            &--left {
+                float: left;
+                margin-right: 40px;
+                width: 46.4%;
+            }
+            &--right {
+                float: right;
+                width: 46.4%;
+            }
+        }
+        &--small {
+            margin: 30px 20px 0px 20px;
+        }
+}
+.formShipping {
+    @include forms;
+    @include clearfix;
+    width: 100%;
+        
+        &__wrapp {
+            margin: 30px;
+        }
+        &__form {
+            display: flex;
+            justify-content: space-between;
+        }
+        &__column {
+            width: 100%;
+            margin-right: 30px;
+            &:last-child {
+                margin-right: 0;
+            }
+        }
+        &__select {
+            margin-bottom: 25px;
+                &:focus { 
+                    outline: none;
+                }
+        }
+        &__link {
+            text-decoration: none;
+            color: #65abd0;
+            font-size: 16px;
+            margin-right: 16px;
+        }
+}
+i {
+    font-size: 14px;
+}
+.fa-chevron-left {
+    color: $color-blue;
+}
+.fa-button {
+    padding-left: 10px;
+}
+.select-style {
+    padding: 0;
+    margin: 0;
+    margin-bottom: 25px;
+    border: none;
+    width: 100%;
+    border-radius: 5px;
+    overflow: hidden;
+    background-color: $color-blue;
+    background: $color-blue url("../img/select_icon.png") no-repeat 90% 50%;
+        &--orange {
+            background-color: $color-orange;
+            background: $color-orange url("../img/select_icon.png") no-repeat 90% 50%;
+        }
+}
+.formPayment {
+    padding: 35px 100px 0 30px;
+    &__column {
+        width: 50%;
+        &--left {
+            float: left;
+        }
+        &--right {
+            float: right;
+        }
+    }
+    &__input {
+        @include input;
+        width: 100%;
+        padding: 16px;
+        margin-bottom: 25px;
+            &--number {
+                width: 22%;
+                margin-right: 10px;
+                    &:nth-child(5) {
+                        margin-right: 0px;
+                    }
+             }
+    }
+    &__block {
+        margin-top: 30px;
+        margin-right: 60px;
+    }
+    &-fa {
+        padding-right:10px;
+    }
+    &__link {
+        padding-left: 15px;
+    }
+    &__bottom {
+        @include clearfix;
+        clear: both;
+    }
+    &__select {
+        padding: 16px;
+        width: 100%;
+        border: none;
+        box-shadow: none;
+        background-color: transparent;
+        background-image: none;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+    }
+    &__select-style {
+        padding: 0;
+        margin: 0;
+        margin-bottom: 25px;
+        border: none;
+        width: 48%;
+        border-radius: 5px;
+        overflow: hidden;
+        background-color: $color-orange;
+        background: $color-orange url(../img/select_icon.png) no-repeat 90% 50%;
+            &--right {
+                float: right;
+            }
+            &--left {
+                float: left;
+            }
+    }
 }

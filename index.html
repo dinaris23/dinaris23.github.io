@@ -2,12 +2,15 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Forms</title>
 	<link href="https://fonts.googleapis.com/css?family=Cabin:600" rel="stylesheet">
 	<link rel="stylesheet" type="text/css" href="css/normalize.css">
 	<link rel="stylesheet" type="text/css" href="css/main.css">
+	<link rel="stylesheet" href="../font-awesome/css/font-awesome.min.css">
 </head>
 <body>
+	<main class="container">
 	<section class="wrapp">
 		<div class="formTop">
 			<div class="formTop__header formTop__header--up">
@@ -16,8 +19,8 @@
 			</div>
 			<form class="registrationForm" action="#">
 				<input class="registrationForm__input registrationForm__input--mail" type="text"
-			    placeholder="E-mail or Login">
-				<input class="registrationForm__input registrationForm__input--password" type="password" placeholder="Password">
+			    placeholder="E-mail or Login" name="input mail">
+				<input class="registrationForm__input registrationForm__input--password" type="password" placeholder="Password" name="input password">
 				<p class="registrationForm__forgotPass">Forgot password?</p>
 				<button class="btn btn--big btn--blue">Sign Up</button>
 				<p class="registrationForm__delimiter">
@@ -36,8 +39,8 @@
 			</div>
 			<form class="registrationForm" action="#">
 				<input class="registrationForm__input registrationForm__input--mail" type="text"
-			    placeholder="E-mail or Login">
-				<input class="registrationForm__input registrationForm__input--password" type="password" placeholder="Password">
+			    placeholder="E-mail or Login" name="input mail">
+				<input class="registrationForm__input registrationForm__input--password" type="password" placeholder="Password" name="input password">
 				<label class="checkbox">
     				<input class="checkbox__input" type="checkbox" name="checkbox-test"  checked>
     				<span class="checkbox__custom"></span>
@@ -63,7 +66,7 @@
 			<form class="registrationForm" action="#">
 				<input class="registrationForm__input registrationForm__input--mail" type="text"
 			    placeholder="E-mail or Login">
-				<input class="registrationForm__input registrationForm__input--password" type="password" placeholder="Password">
+				<input class="registrationForm__input registrationForm__input--password" type="password" placeholder="Password" name="input password">
 				<p class="registrationForm__forgotPass">Forgot password?</p>
 				<button class="btn btn--big btn--blue">Sign Up</button>
 				<p class="registrationForm__delimiter">
@@ -82,8 +85,8 @@
 			</div>	
 			<form class="registrationForm" action="#">
 				<input class="registrationForm__input registrationForm__input--mail" type="text"
-			    placeholder="E-mail or Login">
-				<input class="registrationForm__input registrationForm__input--password" type="password" placeholder="Password">
+			    placeholder="E-mail or Login" name="input mail">
+				<input class="registrationForm__input registrationForm__input--password" type="password" placeholder="Password" name="input password">
 				<label class="checkbox">
     				<input class="checkbox__input" type="checkbox" name="checkbox-test"  checked>
     				<span class="checkbox__custom"></span>
@@ -107,21 +110,183 @@
 				</div>	
 				<form class="registrationForm" action="#">
 					<input class="registrationForm__input registrationForm__input--mail" type="text"
-			    placeholder="E-mail">
+			    placeholder="E-mail" name="input mail">
 					<button class="btn btn--big btn--red">Reset</button>
 				</form>
 			</div>	
-			<div class="formSmall formSmall--subscribing">
+			<div class="formSmall formSmall--subscribe">
 				<div class="formSmall__header">
 					<h2 class="formSmall__title">Subscribing</h2>
 				</div>	
-				<form class="registrationForm" action="#">
+				<form class="registrationForm registrationForm__subscribe" action="#">
 					<p class="forgotPass">We will never send you spam or some other trash</p>
-					<input class="registrationForm__input registrationForm__input--mail" type="text"
-			    placeholder="E-mail">
-					<!--<button class="btn btn--big btn--red">Reset</button>-->
+					<input class="registrationForm__input--subscribe registrationForm__input--mail" type="text"
+			    placeholder="E-mail" name="input mail">
+					<button class="btn btn--orange btn--subscribe">
+						<i class="fa fa-chevron-right" aria-hidden="true"></i>
+					</button>
 				</form>
 			</div>
 		</div>	
 	</section>
+	<section class="wrapp">
+		<div class="formContact">
+			<div class="formSmall__header">
+				<h2 class="formSmall__title">Contact</h2>
+			</div>	
+			<form class="formContact__wrapp">
+			<div class="formContact__column">
+				<div class="formContact__column--left">
+					<label class="formContact__label" for="input name">Name</label>
+						<input class="formContact__input" type="text" name="input name" placeholder="Enter your name"></input>
+					<label class="formContact__label" for="input subject">Subject</label>
+						<input class="formContact__input" type="text" name="input subject" placeholder="Subject"></input>
+				</div>
+				<div class="formContact__column--right">
+						<label class="formContact__label" for="input mail">E-mail</label>
+							<input class="formContact__input" type="text" name="input mail" placeholder="E-mail"></input>
+						<label class="formContact__label" for="select budget">Select Budget</label>	
+						<div class="select-style">
+							<select class="formContact__select btn">
+								<option>$10 000-$15 000</option>
+							</select>
+						</div>	
+				</div>
+			</div>
+				<label class="formContact__label" for="input message">Message</label>
+					<textarea class="formContact__textarea" name="input message" placeholder="Type your message"></textarea>
+				<label class="checkbox">
+						<input class="checkbox__input" type="checkbox" name="checkbox-test"  checked>
+						<span class="checkbox__custom checkbox__custom--contact"></span>
+						<span class="checkbox__label checkbox__label--contact">Send me a copy</span>
+				</label>
+				<button class="btn btn--send btn--green">Send</button>
+			</form>
+		</div>
+		<div class="formSmall">
+			<div class="formSmall__header">
+				<h2 class="formSmall__title">Contact</h2>
+			</div>	
+			<form class="formContact--small">
+				<label class="formContact__label"for="input name">Name</label>
+				<input  class="formContact__input" type="text" name="input name"></input>
+				<label class="formContact__label" for="input mail">E-mail</label>
+				<input class="formContact__input" type="text" name="input mail"></input>
+				<label  class="formContact__label" for="input massage">Message</label>
+				<textarea class="formContact__textarea" name="input massage"></textarea>
+				<button class="btn btn--send btn--green">Send</button>
+			</form>
+		</div>			
+	</section>
+	<section class="wrapp">
+		<div class="formShipping">
+				<div class="formSmall__header">
+					<h2 class="formSmall__title">Contact</h2>
+				</div>	
+				<div class="formShipping__wrapp">
+				<form class="formShipping__form">
+						<div class="formShipping__column">
+								<label class="formContact__label" for="select country">Select country</label>	
+								<div class="select-style">
+										<select class="formContact__select btn select-style--orange" name="select country">
+											<option>USA</option>
+										</select>
+									</div>
+								<label class="formContact__label" for="select city">Select City</label>	
+								<div class="select-style">
+										<select class="formContact__select btn select-style--orange" name="select city">
+											<option>California</option>
+										</select>
+									</div>
+						</div>
+						<div class="formShipping__column">
+							<label class="formContact__label" for="input name">State, Region, Province</label>
+							<input class="formContact__input" type="text" name="input name"></input>
+							<label class="formContact__label" for="input subject">ZIP Code</label>
+							<input class="formContact__input" type="text" name="input subject"></input>
+						</div>
+						<div class="formShipping__column">
+							<label class="formContact__label" for="input name">Adress 1</label>
+							<input class="formContact__input" type="text" name="input name"></input>
+							<label class="formContact__label" for="input subject">Adress 2</label>
+							<input class="formContact__input" type="text" name="input subject"></input>
+						</div>	
+					</form>		
+				</div>
+				<div class="formSmall__header">
+						<h2 class="formSmall__title">Contact info</h2>
+				</div>
+				<div class="formShipping__wrapp">
+						<form class="formShipping__form">
+								<div class="formShipping__column">
+									<label class="formContact__label" for="input name">Full Name</label>
+								    <input class="formContact__input" type="text" name="input name"></input>
+								</div>
+								<div class="formShipping__column">
+									<label class="formContact__label" for="input name">E-mail</label>
+									<input class="formContact__input" type="text" name="input name"></input>
+								</div>
+								<div class="formShipping__column">
+									<label class="formContact__label" for="input name">Phone</label>
+									<input class="formContact__input" type="text" name="input name"></input>
+								</div>	
+							</form>		
+							<i class="fa fa-chevron-left" aria-hidden="true"></i>
+							<a class="formShipping__link" href="#">Return to Cart</a>
+							<button class="btn btn--payment btn--green">Payment method<i class="fa fa-chevron-right fa-button" aria-hidden="true"></i></button>
+						</div>
+				</div>
+
+	</section>
+	<section class="wrapp">
+		<div class="formShipping">
+			<div class="formPayment__column formPayment__column--left">
+					<div class="formSmall__header">
+						<h2 class="formSmall__title">Payment method</h2>
+					</div>
+					<form class="formPayment">
+						<label class="formContact__label" for="card number">Credit Card</label>
+						<input class="formPayment__input formPayment__input--number" type="text" name="card number"></input>
+						<input class="formPayment__input formPayment__input--number" type="text" name="card number"></input>
+						<input class="formPayment__input formPayment__input--number" type="text" name="card number"></input>
+						<input class="formPayment__input formPayment__input--number" type="text" name="card number"></input>
+						<label class="formContact__label" for="cardholder name">Cardholedr Name</label>
+						<input class="formPayment__input" type="text" name="cardholder name"></input>
+						<label class="formContact__label" for="select date">Expire</label>	
+						<div class="formPayment__select-style formPayment__select-style--left">
+								<select class="formPayment__select btn select-style--orange" name="select date">
+									<option>Month</option>
+								</select>
+						</div>
+						<div class="formPayment__select-style formPayment__select-style--right">
+								<select class="formPayment__select btn select-style--orange" name="select date">
+									<option>Year</option>
+								</select>
+						</div>
+						<label class="formContact__label" for="cvv">CVV</label>
+						<input class="formPayment__input formPayment__input--number" type="text" name="cvv"></input>	
+					</form>
+			</div>
+			<div class="formPayment__column formPayment__column--right">
+					<div class="formSmall__header">
+						<h2 class="formSmall__title formSmall__title--left">Payment method</h2>
+					</div>
+				<div class="formPayment__block">
+					<label class="checkbox">
+							<input class="checkbox__input" type="checkbox" name="checkbox-test"  checked>
+							<span class="checkbox__custom checkbox__custom--payment"></span>
+							<span class="checkbox__label checkbox__label--payment">Same as shipping adress</span>
+					</label>
+					<p>A hundred thousand grateful loves to your dear papa and mamma. Is your poor brother recovered of his rack-punch? Oh, dear! Oh, dear! How men should beware of wicked punch!</p>
+				</div>	
+			</div>
+			<div class="formPayment__bottom">	
+			    <a class="formShipping__link formPayment__link" href="#"><i class="fa fa-chevron-left formPayment-fa" aria-hidden="true"></i>Edit Shipping Adress</a>
+				<button class="btn btn--payment btn--payment--bottom btn--green">Place Order<i class="fa fa-chevron-right fa-button" aria-hidden="true"></i></button> 
+			</div>
+		</div>
+	</section>
+</main>	
+</body>
+</html>	
 	
