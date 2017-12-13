@@ -8,9 +8,11 @@ $color-darkBlue: #3162a2;
 $color-orange: #d9c26c;
 $color-red: #db7560;
 $color-black: #393635;
+$color-brown: #865447;
 $border-radius: 5px;
 $font: 'Cabin', sans-serif;
 $font-size: 16px;
+$border: 2px solid #c6ccd2;
 
 //mixins
 @mixin forms {
@@ -25,7 +27,7 @@ $font-size: 16px;
   }
 @mixin input {
     box-sizing: border-box;
-    border: 2px solid #c6ccd2;
+    border: $border;
     border-radius: 5px;
     font-family: "Cabin", sans-serif;
     font-size: 16px;
@@ -64,6 +66,9 @@ body {
 	display: flex;
 	justify-content: space-between;
     margin-top: 50px;
+        &:nth-last-child(1) {
+            margin-bottom: 50px;
+        }
 
 }
 @include placeholder {
@@ -181,7 +186,7 @@ body {
                     padding: 0 15px;
             }
         }
-    }
+    }  
 .btn {
     @include button;
         &--social {
@@ -291,6 +296,18 @@ body {
                 &--payment {
                     margin: 0;
                 }
+                &--cart {
+                    margin: 0;
+                    margin-bottom: 5px;
+                    border-radius: 50%;
+
+                }
+                &--red {background-color: $color-red;}
+                &--orange {background: $color-orange;}
+                &--blue {background: $color-blue;}
+                &--green {background: $color-green;}
+                &--black {background: $color-black;}
+                &--brown {background: $color-brown;} 
         }
         &__label {
             display: inline-block;
@@ -528,3 +545,78 @@ i {
             }
     }
 }
+.formCart {
+        padding: 30px;
+            &__header {
+                display: flex;
+                justify-content: space-between;
+                border-bottom: $border;
+                padding-right: 20px;
+            }
+            &__subtotal {
+                display: flex;
+                justify-content: flex-end;
+                margin: 20px 20px 30px 0;
+                    &--result {
+                        color: $color-black;
+                    }
+            }
+            &__button {
+                border: none;
+                user-select: none;
+                border-radius: 20%;
+                color: #fff;   
+                padding-top: 4px;
+                    &--sub {
+                        background-color: $color-red;
+                        margin-right: 15px;
+                    } 
+                    &--add {
+                        background-color: $color-green;
+                        margin-left: 15px;
+                    }
+                    &:focus {
+                        outline: none;
+                    }
+            }
+            &__product {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                border-bottom: $border;
+                color: $color-black;
+                padding: 10px 20px 10px 30px;
+                    &--caption {
+                        padding-left: 20px;
+                    }
+                    &--choice {
+                        padding-top: 10px;
+                    }
+                    &--color {
+                        font-size: 14px;
+                        color: $text-color;
+                        padding-right: 10px;
+                    }
+                    &--image {
+                        display: inline-flex;
+                        align-items: center;
+                        flex-basis: 275px;
+                    }
+                    &--size {
+                        color: #fff;
+                        background-color: $text-color;
+                        border-radius: 20%;
+                        font-size: 12px;
+                        padding: 3px;
+                    }
+            }
+            &__item {
+                font-size: 14px;
+                &--item {
+                    flex-basis: 290px;
+                    text-align: center;
+                }
+            }
+            
+
+        }

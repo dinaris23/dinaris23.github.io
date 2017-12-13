@@ -13,6 +13,8 @@ body {
   display: flex;
   justify-content: space-between;
   margin-top: 50px; }
+  .wrapp:nth-last-child(1) {
+    margin-bottom: 50px; }
 
 ::-webkit-input-placeholder {
   color: #c6ccd2; }
@@ -214,6 +216,22 @@ body {
       margin-top: 25px; }
     .checkbox__custom--payment {
       margin: 0; }
+    .checkbox__custom--cart {
+      margin: 0;
+      margin-bottom: 5px;
+      border-radius: 50%; }
+    .checkbox__custom--red {
+      background-color: #db7560; }
+    .checkbox__custom--orange {
+      background: #d9c26c; }
+    .checkbox__custom--blue {
+      background: #65abd0; }
+    .checkbox__custom--green {
+      background: #24aa98; }
+    .checkbox__custom--black {
+      background: #393635; }
+    .checkbox__custom--brown {
+      background: #865447; }
   .checkbox__label {
     display: inline-block;
     vertical-align: middle;
@@ -424,3 +442,61 @@ i {
       float: right; }
     .formPayment__select-style--left {
       float: left; }
+
+.formCart {
+  padding: 30px; }
+  .formCart__header {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 2px solid #c6ccd2;
+    padding-right: 20px; }
+  .formCart__subtotal {
+    display: flex;
+    justify-content: flex-end;
+    margin: 20px 20px 30px 0; }
+    .formCart__subtotal--result {
+      color: #393635; }
+  .formCart__button {
+    border: none;
+    user-select: none;
+    border-radius: 20%;
+    color: #fff;
+    padding-top: 4px; }
+    .formCart__button--sub {
+      background-color: #db7560;
+      margin-right: 15px; }
+    .formCart__button--add {
+      background-color: #24aa98;
+      margin-left: 15px; }
+    .formCart__button:focus {
+      outline: none; }
+  .formCart__product {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid #c6ccd2;
+    color: #393635;
+    padding: 10px 20px 10px 30px; }
+    .formCart__product--caption {
+      padding-left: 20px; }
+    .formCart__product--choice {
+      padding-top: 10px; }
+    .formCart__product--color {
+      font-size: 14px;
+      color: #c6ccd2;
+      padding-right: 10px; }
+    .formCart__product--image {
+      display: inline-flex;
+      align-items: center;
+      flex-basis: 275px; }
+    .formCart__product--size {
+      color: #fff;
+      background-color: #c6ccd2;
+      border-radius: 20%;
+      font-size: 12px;
+      padding: 3px; }
+  .formCart__item {
+    font-size: 14px; }
+    .formCart__item--item {
+      flex-basis: 290px;
+      text-align: center; }
